@@ -244,12 +244,15 @@ footer {
     }
 }
 
+.btn {
+    background-color: transparent;
+}
+
 @keyframes basketPopUp {
     from {
         opacity: 0;
         top: 70%;
     }
-
     to {
         opacity: 1;
         top: 50%;

@@ -1,14 +1,18 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import icon from "../assets/img/pngegg.png";
+import { useTranslation, setLanguage } from "react-multi-lang";
 
 function Header() {
+  const [lang, setLang] = useState(true);
+  const t = useTranslation();
   useEffect(() => {
     window.addEventListener("scroll", () => {
       let header = document.querySelector(".header");
       header.classList.toggle("sticky", window.scrollY > 0);
     });
   }, []);
+
   return (
     <div className="header">
       <NavLink to={"/"} className="logo">
@@ -16,7 +20,32 @@ function Header() {
       </NavLink>
       <ul>
         <li>
-          <NavLink to={"/"}>Products</NavLink>
+          <NavLink to={"/"}>{t("product")}</NavLink>
+        </li>
+        <li>
+          {lang ? (
+            <button
+              className="btn red accent-1"
+              onClick={() => {
+                setLanguage("uz");
+                localStorage.setItem("lang", "uz");
+                setLang(!lang);
+              }}
+            >
+              O‘zbekcha
+            </button>
+          ) : (
+            <button
+              className="btn red accent-1"
+              onClick={() => {
+                setLanguage("en");
+                localStorage.setItem("lang", "en");
+                setLang(!lang);
+              }}
+            >
+              English
+            </button>
+          )}
         </li>
       </ul>
     </div>
