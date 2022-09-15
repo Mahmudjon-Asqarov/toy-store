@@ -41,10 +41,6 @@ function Shop() {
     setBasketShow(!isBasketShow);
   };
 
-  // const removeFromBasket = (itemId) => {
-  //   const newOrder = order.filter((item) => item.id !== itemId);
-  //   setOrder(newOrder);
-  // };
   const removeFromBasket = (itemID) => {
     const newOrder = order.filter((item) => item.id !== itemID);
     setOrder(newOrder);
