@@ -1,38 +1,247 @@
-.App {
-  text-align: center;
+/* start navbar  */
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 80px;
+    transition: 0.3s;
+    z-index: 97;
+    background-color: #fc595c;
+    background-image: radial-gradient(circle, #fc595c 0%, #350002 100%);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.header::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0px;
+    background-color: #350002;
+    background-image: radial-gradient(circle, #350002 0%, #fc595c 100%);
+    transition: 0.5s;
+    transition-delay: 0.3s;
+    z-index: -1;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.header.sticky {
+    padding: 4px 80px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.header.sticky::after {
+    height: 100%;
 }
 
-.App-link {
-  color: #61dafb;
+.header .logo {
+    text-transform: uppercase;
+    font-weight: bold;
+    text-decoration: none;
+    color: white;
+    font-size: 1.8rem;
+    transition: 0.5s;
+    transition-delay: 0.3s;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.header .logo>img {
+    height: 60px;
+}
+
+.header ul {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header ul li {
+    list-style: none;
+    margin: 0 10px;
+}
+
+.header ul li a {
+    padding: 5px 10px;
+    text-decoration: none;
+    font-size: 1.3rem;
+    color: #fff;
+    transition: 0.5s;
+    transition-delay: 0.3s;
+}
+
+.header.sticky .logo,
+.header.sticky ul li a {
+    color: #fff;
+}
+
+
+
+/* end navbar  */
+.bc_fon {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 98;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, .5);
+}
+
+/* start shop  */
+
+.shop-container {
+    margin-top: 6rem;
+}
+
+.content {
+    min-height: calc(100vh - 70px - 64px);
+    padding: 1.5rem 0;
+}
+
+.goods {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1rem;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+}
+
+.card-content {
+    flex-grow: 1;
+}
+
+.cart {
+    position: fixed;
+    top: 7.5rem;
+    right: 1.1rem;
+    cursor: pointer;
+    z-index: 3;
+    padding: 1rem;
+    border-radius: 5px;
+}
+
+@media (max-width: 600px) {
+    .header {
+        padding: 1.2rem 20px !important;
+    }
+
+    .shop-container {
+        margin-top: 6.5rem;
+    }
+
+    .cart {
+        right: .5rem;
+    }
+}
+
+
+/* end  Shop */
+
+
+/* Basket */
+.basket-list {
+    position: fixed;
+    z-index: 99;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #fff;
+    width: 50rem;
+    max-width: 95%;
+    box-shadow: 0 6px 15px 0 rgba(0, 0, 0, .5);
+    animation: basketPopUp .3s ease-in-out;
+}
+
+.basket-close {
+    position: absolute;
+    top: 0.5rem;
+    right: .5rem;
+    color: #fff;
+    cursor: pointer;
+}
+
+.basket-delete {
+    cursor: pointer;
+}
+
+.collection-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.count {
+    display: flex;
+    align-items: center;
+}
+
+.count>svg {
+    font-size: 24px;
+    padding: 2px;
+    cursor: pointer;
+    border: 1px solid #aaa;
+    margin: 2px;
+    border-radius: 50%;
+}
+
+.count>b {
+    margin: 5px;
+}
+
+.active-price {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.red-colors {
+    color: #fc595c;
+}
+
+/* start footer */
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 80px;
+    background-color: #fc595c;
+    background-image: radial-gradient(circle, #fc595c 0%, #350002 100%);
+    color: #fff;
+}
+
+.collection_item {
+    list-style: none;
+    display: flex;
+}
+
+.collection_link {
+    margin: 0 .5rem;
+    cursor: pointer;
+}
+
+.collection_link>a {
+    font-size: 1.2rem;
+    color: #fff;
+}
+
+.collection_link>a:hover {
+    color: #fc595c;
+}
+
+@keyframes basketPopUp {
+    from {
+        opacity: 0;
+        top: 70%;
+    }
+
+    to {
+        opacity: 1;
+        top: 50%;
+    }
 }
