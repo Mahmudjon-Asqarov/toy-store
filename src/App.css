@@ -45,6 +45,8 @@
     font-size: 1.8rem;
     transition: 0.5s;
     transition-delay: 0.3s;
+    display: flex;
+    align-items: center;
 }
 
 .header .logo>img {
@@ -125,21 +127,6 @@
     padding: 1rem;
     border-radius: 5px;
 }
-
-@media (max-width: 600px) {
-    .header {
-        padding: 1.2rem 20px !important;
-    }
-
-    .shop-container {
-        margin-top: 6.5rem;
-    }
-
-    .cart {
-        right: .5rem;
-    }
-}
-
 
 /* end  Shop */
 
@@ -233,6 +220,30 @@ footer {
 .collection_link>a:hover {
     color: #fc595c;
 }
+
+@media (max-width: 600px) {
+    .header {
+        padding: .5rem 10px !important;
+    }
+
+    .logo>img {
+        height: 30px;
+
+    }
+
+    .shop-container {
+        margin-top: 6.5rem;
+    }
+
+    .cart {
+        right: .5rem;
+    }
+
+    footer {
+        padding: .7rem 10px
+    }
+}
+
 
 @keyframes basketPopUp {
     from {

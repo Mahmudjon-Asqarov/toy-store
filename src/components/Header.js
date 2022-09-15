@@ -16,10 +16,7 @@ function Header() {
       </NavLink>
       <ul>
         <li>
-          <NavLink to={"/"}>Home</NavLink>
-        </li>
-        <li>
-          <NavLink to={"/"}>Product</NavLink>
+          <NavLink to={"/"}>Products</NavLink>
         </li>
       </ul>
     </div>
