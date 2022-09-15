@@ -4,8 +4,8 @@ import icon from "../assets/img/pngegg.png";
 import { useTranslation, setLanguage } from "react-multi-lang";
 
 function Header() {
-  const [lang, setLang] = useState(true);
   const t = useTranslation();
+  const [lang, setLang] = useState(true);
   useEffect(() => {
     window.addEventListener("scroll", () => {
       let header = document.querySelector(".header");
@@ -32,7 +32,7 @@ function Header() {
                 setLang(!lang);
               }}
             >
-              O‘zbekcha
+              English
             </button>
           ) : (
             <button
@@ -43,7 +43,7 @@ function Header() {
                 setLang(!lang);
               }}
             >
-              English
+              O‘zbekcha
             </button>
           )}
         </li>
