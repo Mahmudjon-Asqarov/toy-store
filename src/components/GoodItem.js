@@ -1,7 +1,9 @@
 import React from "react";
+import { useTranslation} from 'react-multi-lang'
 
 function GoodItem(props) {
   const { id, name, description, price, full_background, addToBasket } = props;
+  const t = useTranslation()
   return (
     <div className="card" id={id}>
       <div className="card-image">
@@ -17,7 +19,7 @@ function GoodItem(props) {
           className="btn red darken-3
           "
         >
-          Buy
+          {t("buy")}
         </button>
         <span className="right" style={{ fontSize: "1.8rem" }}>
           {price}$

@@ -22,9 +22,9 @@
     left: 0;
     width: 100%;
     height: 0px;
-    background-color: #350002;
-    background-image: radial-gradient(circle, #350002 0%, #fc595c 100%);
-    transition: 0.5s;
+    background-color: rgba(53, 0, 2, 1);
+    background-image: linear-gradient(0deg, rgba(252, 89, 92, 1) 0%, rgb(116, 7, 11) 100%);
+    transition: 0.8s;
     transition-delay: 0.3s;
     z-index: -1;
 }
@@ -253,6 +253,7 @@ footer {
         opacity: 0;
         top: 70%;
     }
+
     to {
         opacity: 1;
         top: 50%;
