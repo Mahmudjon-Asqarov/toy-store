@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { API_KEY, API_URL } from "../config";
 import BasketList from "./BasketList";
-import { ToastContainer, toast } from "react-toastify";
+// import { ToastContainer, toast } from "react-toastify";
 import Cart from "./Cart";
 import GoodList from "./GoodList";
 import Loader from "./Loader";
+import toast from "react-hot-toast";
 
 function Shop() {
   const [goods, setGoods] = useState([]);
